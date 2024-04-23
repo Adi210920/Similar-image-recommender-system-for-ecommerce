@@ -1,0 +1,29 @@
+{% load static %}
+<!-- home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ... Your other head content ... -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles2.css' %}">
+
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Product Catalog</h1>
+    </header>
+    <main>
+        <section class="product-cards">
+            {% for product in products %}
+                <div class="product-card">
+                    <a href="{% url 'product_details' product.id %}"> <!-- Link to product details -->
+                        <img src="{{ product.image.url }}" alt="{{ product.title }}">
+                        <h2>{{ product.title }}</h2>
+                    </a>
+                    <p>Price: Rs.{{ product.price }}</p>
+                </div>
+            {% endfor %}
+        </section>
+    </main>
+</body>
+</html>
