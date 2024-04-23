@@ -1,0 +1,31 @@
+/* styles.css */
+.product-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Create a responsive grid with 4 columns on desktop */
+    gap: 20px; /* Add some spacing between the product cards */
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.product-card a {
+    text-decoration: none;
+    color: #333;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-card h2 {
+    margin: 10px 0;
+}
+
+.product-card p {
+    font-weight: bold;
+    color: #007BFF;
+}

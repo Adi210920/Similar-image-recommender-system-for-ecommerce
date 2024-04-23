@@ -1,0 +1,35 @@
+<!-- product_details.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ... Your other head content ... -->
+</head>
+<body>
+    <header>
+        <h1>{{ product.title }} Details</h1>
+    </header>
+    <main>
+        <section class="product-details">
+            <div class="product-detail">
+                <img src="{{ product.image.url }}" alt="{{ product.title }}">
+                <h2>{{ product.title }}</h2>
+                <p>Price: Rs.{{ product.price }}</p>
+                <!-- Add more details about the product here -->
+            </div>
+        </section>
+
+        <section class="recommended-images">
+            <h2>Recommended Images</h2>
+            <div class="recommended-images-list">
+                {% for recommended_product in recommended_products %}
+                    <div class="recommended-image">
+                        <img src="{{ recommended_product.image.url }}" alt="Recommended Image">
+                        <h3><a href="{% url 'product_details' recommended_product.id %}">{{ recommended_product.title }}</a></h3>
+                        <p>Price: RS.{{ recommended_product.price }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+</body>
+</html>
